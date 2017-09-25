@@ -1,5 +1,12 @@
 # Heroku buildpack for Elm apps
 
+---
+
+### UPDATE:
+**I forked this from @srid and added naive functionality to allow for a second ELM_COMPILE script**
+
+---
+
 Check out the example app [elm-todomvc](https://github.com/srid/elm-todomvc). In brief:
 
 - Add an [`app.json`](https://github.com/srid/elm-todomvc/blob/heroku/app.json) file
