@@ -78,9 +78,9 @@ ELM_COMPILE=$(get_app_json_env "ELM_COMPILE")
 
 # Allow multiple compile scripts separated by " && "
 
-ELM_COMPILE_SCRIPTS=$(echo $ELM_COMPILE | tr " && " "\n")
+ELM_COMPILE_SCRIPTS=$(echo $ELM_COMPILE | tr " && ")
 
-echo "\n\n-----\n\nCOMPILING WITH FORKED BUILDPACK\n\n-----\n\n"
+echo "-----> COMPILING WITH FORKED BUILDPACK"
 
 for script in ${ELM_COMPILE_SCRIPTS}
 do
