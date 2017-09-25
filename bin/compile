@@ -80,6 +80,8 @@ ELM_COMPILE=$(get_app_json_env "ELM_COMPILE")
 
 ELM_COMPILE_SCRIPTS=$(echo $ELM_COMPILE | tr " && " "\n")
 
+echo "\n\n-----\n\nCOMPILING WITH FORKED BUILDPACK\n\n-----\n\n"
+
 for script in ${ELM_COMPILE_SCRIPTS}
 do
     echo "-----> Compiling with ${script}"
