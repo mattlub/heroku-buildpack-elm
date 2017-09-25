@@ -75,18 +75,15 @@ get_app_json_env() {
 }
 
 ELM_COMPILE=$(get_app_json_env "ELM_COMPILE")
-
-# Allow multiple compile scripts separated by " && "
-
-ELM_COMPILE_SCRIPTS=$(echo $ELM_COMPILE | tr " && ")
+ELM_COMPILE_2=$(get_app_json_env "ELM_COMPILE_2")
 
 echo "-----> COMPILING WITH FORKED BUILDPACK"
 
-for script in ${ELM_COMPILE_SCRIPTS}
-do
-    echo "-----> Compiling with ${script}"
-    ${script} | indent
-done
+echo "-----> Compiling with ${ELM_COMPILE}"
+${ELM_COMPILE} | indent
+
+echo "-----> Compiling with ${ELM_COMPILE_2}"
+${ELM_COMPILE_2} | indent
 
 if [ $CACHE_BUILD_OBJECTS = true ]; then
     # Copy package and compile artifacts back to cache
